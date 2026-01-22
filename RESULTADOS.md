@@ -2,30 +2,27 @@
 
 
 ## 📈 Resumen
-✅ 2 correctas de 7 queries
+✅ 1 correctas de 7 queries
 
 ## ❌ Query 1: Error
-- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': 'alumno' ORDER BY (apellido1, apellido2, nombre)' at line 2
+- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': `alumno` ORDER BY (apellido1, apellido2, nombre)' at line 2
 
 
 ## ❌ Query 2: Error
-- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': 'alumno' AND telefono IS NULL' at line 2
+- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ': `alumno` AND telefono IS NULL' at line 2
 
 
-## ✅ Query 3: Correcto
+## ❌ Query 3: Error
+- **Descripción**: 1054 (42S22): Unknown column 'alumno' in 'where clause'
 
-⏱ Tiempo: 0.47 ms
-🔍 No se usó ningún índice en esta consulta.
-
----
 
 ## ❌ Query 4: Error
-- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''profesor' AND telefono IS NULL AND nif LIEK '%K'' at line 2
+- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`profesor` AND telefono IS NULL AND nif LIEK '%K'' at line 2
 
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.38 ms
+⏱ Tiempo: 0.37 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
