@@ -2,18 +2,18 @@
 
 
 ## 📈 Resumen
-✅ 9 correctas de 23 queries
+✅ 10 correctas de 23 queries
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.48 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -34,52 +34,42 @@
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.39 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.42 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.54 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY, PRIMARY,id_asignatura,id_curso_escolar
+⏱ Tiempo: 0.57 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY,id_asignatura,id_curso_escolar, PRIMARY
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 0.41 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY, id_profesor,id_grado
+⏱ Tiempo: 0.38 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento, id_profesor,id_grado
 
 ---
 
 ## ✅ Query 9: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.37 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
 
 ---
 
-## ❌ Query 10: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,4 +1,4 @@
--departamento | apellido1 | apellido2 | nombre
-+nombre_departamento | primer_cognom | segon_cognom | nombre_profesor
- Agronomía | Monahan | Murray | Micaela
- Economía y Empresa | Fahey | Considine | Antonio
- Economía y Empresa | Lemke | Rutherford | Cristina
-```
+## ✅ Query 10: Correcto
 
-⏱ Tiempo: 0.44 ms
+⏱ Tiempo: 0.43 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -93,7 +83,7 @@
 +primer_cognom | segon_cognom | nom_professor
 ```
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.35 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -112,7 +102,7 @@
 -Biología y Geología
 ```
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -142,8 +132,8 @@
 -Schowalter | Muller | Francesca
 ```
 
-⏱ Tiempo: 0.39 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor
+⏱ Tiempo: 0.38 ms
+✅ Se usó índice(s) en la consulta: id_profesor, PRIMARY
 
 ---
 
@@ -313,8 +303,8 @@
 +Química y Física
 ```
 
-⏱ Tiempo: 0.36 ms
-✅ Se usó índice(s) en la consulta: id_departamento, id_profesor
+⏱ Tiempo: 0.34 ms
+✅ Se usó índice(s) en la consulta: id_profesor, id_departamento
 
 ---
 
@@ -328,7 +318,7 @@
  12.00
 ```
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -343,7 +333,7 @@
  2.00
 ```
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -360,8 +350,8 @@
  Matemáticas | 2.00
 ```
 
-⏱ Tiempo: 0.36 ms
-✅ Se usó índice(s) en la consulta: id_departamento, PRIMARY
+⏱ Tiempo: 0.34 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_departamento
 
 ---
 
@@ -389,7 +379,7 @@
 -Biología y Geología | 0.00
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -406,7 +396,7 @@
  Grado en Ingeniería Agrícola (Plan 2015) | 0.00
 ```
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -421,7 +411,7 @@
  Grado en Ingeniería Informática (Plan 2015) | 51.00
 ```
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.35 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -442,8 +432,8 @@
 -Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
 ```
 
-⏱ Tiempo: 0.34 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, id_grado
+⏱ Tiempo: 0.37 ms
+✅ Se usó índice(s) en la consulta: id_grado, PRIMARY
 
 ---
 
