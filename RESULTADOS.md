@@ -2,39 +2,39 @@
 
 
 ## 📈 Resumen
-✅ 10 correctas de 23 queries
+✅ 11 correctas de 23 queries
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.48 ms
+⏱ Tiempo: 0.38 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.35 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -42,48 +42,41 @@
 ## ✅ Query 6: Correcto
 
 ⏱ Tiempo: 0.42 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.57 ms
+⏱ Tiempo: 0.55 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY,id_asignatura,id_curso_escolar, PRIMARY
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 0.38 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento, id_profesor,id_grado
+⏱ Tiempo: 0.40 ms
+✅ Se usó índice(s) en la consulta: id_profesor,id_grado, PRIMARY,id_departamento, PRIMARY
 
 ---
 
 ## ✅ Query 9: Correcto
 
-⏱ Tiempo: 0.37 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
+⏱ Tiempo: 0.35 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_curso_escolar
 
 ---
 
 ## ✅ Query 10: Correcto
 
-⏱ Tiempo: 0.43 ms
+⏱ Tiempo: 0.41 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
 
-## ❌ Query 11: Incorrecto
-```diff
---- 
-+++ 
-@@ -1 +1 @@
--apellido1 | apellido2 | nombre
-+primer_cognom | segon_cognom | nom_professor
-```
+## ✅ Query 11: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -93,8 +86,7 @@
 --- 
 +++ 
 @@ -1,4 +1,4 @@
--nombre
-+nom_departament
+ nombre
 +Biología y Geología
 +Derecho
  Filología
@@ -102,7 +94,7 @@
 -Biología y Geología
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -132,8 +124,8 @@
 -Schowalter | Muller | Francesca
 ```
 
-⏱ Tiempo: 0.38 ms
-✅ Se usó índice(s) en la consulta: id_profesor, PRIMARY
+⏱ Tiempo: 0.37 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor
 
 ---
 
@@ -270,7 +262,7 @@
 +Virología
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -303,7 +295,7 @@
 +Química y Física
 ```
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.35 ms
 ✅ Se usó índice(s) en la consulta: id_profesor, id_departamento
 
 ---
@@ -318,7 +310,7 @@
  12.00
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -333,7 +325,7 @@
  2.00
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -379,7 +371,7 @@
 -Biología y Geología | 0.00
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -396,7 +388,7 @@
  Grado en Ingeniería Agrícola (Plan 2015) | 0.00
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -432,8 +424,8 @@
 -Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
 ```
 
-⏱ Tiempo: 0.37 ms
-✅ Se usó índice(s) en la consulta: id_grado, PRIMARY
+⏱ Tiempo: 0.35 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_grado
 
 ---
 
