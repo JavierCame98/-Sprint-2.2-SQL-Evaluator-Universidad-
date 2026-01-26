@@ -2,21 +2,11 @@
 
 
 ## 📈 Resumen
-✅ 5 correctas de 23 queries
+✅ 6 correctas de 23 queries
 
-## ❌ Query 1: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,4 +1,4 @@
--apellido1 | apellido2 | nombre
-+primer_cognom | segon_cognom | nom
- Domínguez | Guerrero | Antonio
- Gea | Ruiz | Sonia
- Gutiérrez | López | Juan
-```
+## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.40 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -30,21 +20,21 @@
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -55,8 +45,8 @@
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.56 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY, PRIMARY,id_asignatura,id_curso_escolar
+⏱ Tiempo: 0.57 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,id_asignatura,id_curso_escolar, PRIMARY, PRIMARY,nif
 
 ---
 
@@ -76,7 +66,7 @@
  Sonia | Gea | Ruiz
 ```
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.39 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
 
 ---
@@ -116,7 +106,7 @@
 +primer_cognom | segon_cognom | nom_professor
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.37 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -161,8 +151,8 @@
 +Química y Física
 ```
 
-⏱ Tiempo: 0.35 ms
-✅ Se usó índice(s) en la consulta: id_departamento, id_profesor
+⏱ Tiempo: 0.37 ms
+✅ Se usó índice(s) en la consulta: id_profesor, id_departamento
 
 ---
 
@@ -191,7 +181,7 @@
  2.00
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -224,7 +214,7 @@
 -Biología y Geología | 0.00
 ```
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -253,7 +243,7 @@
 -Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
 ```
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.36 ms
 ✅ Se usó índice(s) en la consulta: id_grado, PRIMARY
 
 ---
