@@ -13,7 +13,7 @@
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -27,49 +27,49 @@
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.40 ms
+⏱ Tiempo: 0.37 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.56 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_asignatura,id_curso_escolar, PRIMARY,nif
+⏱ Tiempo: 0.54 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY, PRIMARY,id_asignatura,id_curso_escolar
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 0.40 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor,id_grado, PRIMARY,id_departamento
+⏱ Tiempo: 0.38 ms
+✅ Se usó índice(s) en la consulta: id_profesor,id_grado, PRIMARY, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 9: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.37 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_curso_escolar
 
 ---
 
 ## ✅ Query 10: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.42 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -94,26 +94,23 @@
 +++ 
 @@ -1,11 +1,11 @@
  apellido1 | apellido2 | nombre
--Schmidt | Fisher | David
-+Fahey | Considine | Antonio
- Kohler | Schoen | Alejandro
+ Schmidt | Fisher | David
+-Kohler | Schoen | Alejandro
  Lemke | Rutherford | Cristina
 -Fahey | Considine | Antonio
-+Monahan | Murray | Micaela
-+Ruecker | Upton | Guillermo
-+Schmidt | Fisher | David
-+Schowalter | Muller | Francesca
  Spencer | Lakin | Esther
-+Stiedemann | Morissette | Alfredo
  Streich | Hirthe | Carmen
--Ruecker | Upton | Guillermo
--Monahan | Murray | Micaela
++Stiedemann | Morissette | Alfredo
++Kohler | Schoen | Alejandro
++Fahey | Considine | Antonio
+ Ruecker | Upton | Guillermo
+ Monahan | Murray | Micaela
 -Stiedemann | Morissette | Alfredo
--Schowalter | Muller | Francesca
+ Schowalter | Muller | Francesca
 ```
 
 ⏱ Tiempo: 0.35 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor
+✅ Se usó índice(s) en la consulta: id_profesor
 
 ---
 
@@ -145,21 +142,21 @@
  Derecho
 ```
 
-⏱ Tiempo: 0.33 ms
-✅ Se usó índice(s) en la consulta: id_departamento, id_profesor
+⏱ Tiempo: 0.32 ms
+✅ Se usó índice(s) en la consulta: id_profesor, id_departamento
 
 ---
 
 ## ✅ Query 16: Correcto
 
-⏱ Tiempo: 0.28 ms
+⏱ Tiempo: 0.29 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 17: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -191,7 +188,7 @@
 -Biología y Geología | 0.00
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -220,7 +217,7 @@
 -Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
 ```
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, id_grado
 
 ---
