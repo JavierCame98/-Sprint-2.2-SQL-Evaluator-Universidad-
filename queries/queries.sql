@@ -33,7 +33,7 @@ SELECT d.nombre AS departamento, pe.apellido1, pe.apellido2, pe.nombre FROM pers
 SELECT pe.apellido1, pe.apellido2, pe.nombre FROM persona AS pe LEFT JOIN profesor AS pr ON pr.id_profesor = pe.id WHERE pe.tipo = 'profesor' AND pr.id_profesor IS NULL ORDER BY pe.apellido1, pe.apellido2, pe.nombre;
 
 -- 12. Retorna un llistat amb els departaments que no tenen professors/es associats. (nombre)
-SELECT d.nombre FROM departamento AS d LEFT JOIN profesor AS p ON p.id_departamento = d.id WHERE p.id_profesor IS NULL ORDER BY d.nombre;
+SELECT d.nombre FROM departamento AS d LEFT JOIN profesor AS p ON p.id_departamento = d.id WHERE p.id_profesor IS NULL;
 
 -- 13. Retorna un llistat amb els professors/es que no imparteixen cap assignatura. (apellido1, apellido2, nombre)
 SELECT pe.apellido1 AS primer_cognom, pe.apellido2 AS segon_cognom, pe.nombre AS nom_professor FROM persona AS pe INNER JOIN profesor AS pr ON pr.id_profesor = pe.id LEFT JOIN asignatura AS a ON a.id_profesor = pr.id_profesor WHERE a.id_profesor IS NULL ORDER BY pe.apellido1, pe.apellido2, pe.nombre;
