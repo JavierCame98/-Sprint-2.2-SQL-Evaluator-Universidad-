@@ -6,14 +6,14 @@
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.40 ms
+⏱ Tiempo: 0.39 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -27,7 +27,7 @@
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.35 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -39,14 +39,27 @@
 
 ---
 
-## ❌ Query 6: Error
-- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESC apellido1, apellido2, nombre' at line 2
+## ❌ Query 6: Incorrecto
+```diff
+--- 
++++ 
+@@ -1,4 +1,4 @@
+-apellido1 | apellido2 | nombre | departamento
++primer_cognom | segon_cognom | nom | departament
+ Fahey | Considine | Antonio | Economía y Empresa
+ Hamill | Kozey | Manolo | Informática
+ Kohler | Schoen | Alejandro | Matemáticas
+```
 
+⏱ Tiempo: 0.38 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento
+
+---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.57 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_asignatura,id_curso_escolar, PRIMARY, PRIMARY,nif
+⏱ Tiempo: 0.53 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY, PRIMARY,id_asignatura,id_curso_escolar
 
 ---
 
@@ -66,8 +79,8 @@
  Sonia | Gea | Ruiz
 ```
 
-⏱ Tiempo: 0.39 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
+⏱ Tiempo: 0.37 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_curso_escolar
 
 ---
 
@@ -106,7 +119,7 @@
 +primer_cognom | segon_cognom | nom_professor
 ```
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -151,8 +164,8 @@
 +Química y Física
 ```
 
-⏱ Tiempo: 0.37 ms
-✅ Se usó índice(s) en la consulta: id_profesor, id_departamento
+⏱ Tiempo: 0.34 ms
+✅ Se usó índice(s) en la consulta: id_departamento, id_profesor
 
 ---
 
@@ -166,7 +179,7 @@
  12.00
 ```
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.32 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -214,7 +227,7 @@
 -Biología y Geología | 0.00
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -243,8 +256,8 @@
 -Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
 ```
 
-⏱ Tiempo: 0.36 ms
-✅ Se usó índice(s) en la consulta: id_grado, PRIMARY
+⏱ Tiempo: 0.35 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_grado
 
 ---
 
