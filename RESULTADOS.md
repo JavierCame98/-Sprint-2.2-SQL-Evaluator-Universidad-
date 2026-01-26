@@ -6,28 +6,28 @@
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.38 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -51,21 +51,32 @@
  Kohler | Schoen | Alejandro | Matemáticas
 ```
 
-⏱ Tiempo: 0.38 ms
+⏱ Tiempo: 0.40 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.53 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY, PRIMARY,id_asignatura,id_curso_escolar
+⏱ Tiempo: 0.51 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,nif, PRIMARY,id_asignatura,id_curso_escolar
 
 ---
 
-## ❌ Query 8: Error
-- **Descripción**: 1146 (42S02): Table 'universidad.profesores' doesn't exist
+## ❌ Query 8: Incorrecto
+```diff
+--- 
++++ 
+@@ -1,2 +1,2 @@
+-nombre
++departament
+ Informática
+```
 
+⏱ Tiempo: 0.42 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor,id_grado, PRIMARY,id_departamento
+
+---
 
 ## ❌ Query 9: Incorrecto
 ```diff
@@ -88,24 +99,15 @@
 ```diff
 --- 
 +++ 
-@@ -1,13 +1 @@
+@@ -1,4 +1,4 @@
 -departamento | apellido1 | apellido2 | nombre
--Agronomía | Monahan | Murray | Micaela
--Economía y Empresa | Fahey | Considine | Antonio
--Economía y Empresa | Lemke | Rutherford | Cristina
--Educación | Ruecker | Upton | Guillermo
--Educación | Spencer | Lakin | Esther
--Educación | Streich | Hirthe | Carmen
--Informática | Hamill | Kozey | Manolo
--Informática | Ramirez | Gea | Zoe
--Matemáticas | Kohler | Schoen | Alejandro
--Matemáticas | Schmidt | Fisher | David
--Química y Física | Schowalter | Muller | Francesca
--Química y Física | Stiedemann | Morissette | Alfredo
 +nombre_departamento | primer_cognom | segon_cognom | nombre_profesor
+ Agronomía | Monahan | Murray | Micaela
+ Economía y Empresa | Fahey | Considine | Antonio
+ Economía y Empresa | Lemke | Rutherford | Cristina
 ```
 
-⏱ Tiempo: 0.41 ms
+⏱ Tiempo: 0.43 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -119,7 +121,7 @@
 +primer_cognom | segon_cognom | nom_professor
 ```
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.37 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -179,7 +181,7 @@
  12.00
 ```
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.29 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -194,7 +196,7 @@
  2.00
 ```
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -227,7 +229,7 @@
 -Biología y Geología | 0.00
 ```
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -256,7 +258,7 @@
 -Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, id_grado
 
 ---
