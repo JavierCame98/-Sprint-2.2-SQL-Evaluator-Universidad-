@@ -2,74 +2,74 @@
 
 
 ## 📈 Resumen
-✅ 18 correctas de 25 queries
+✅ 20 correctas de 25 queries
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.37 ms
+⏱ Tiempo: 0.40 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.34 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.34 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.35 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.38 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY
 
 ---
 
 ## ✅ Query 7: Correcto
 
-⏱ Tiempo: 0.52 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY, PRIMARY,id_asignatura,id_curso_escolar
+⏱ Tiempo: 0.53 ms
+✅ Se usó índice(s) en la consulta: PRIMARY,id_asignatura,id_curso_escolar, PRIMARY,nif, PRIMARY
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 0.37 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, id_profesor,id_grado, PRIMARY
+⏱ Tiempo: 0.39 ms
+✅ Se usó índice(s) en la consulta: id_profesor,id_grado, PRIMARY,id_departamento, PRIMARY
 
 ---
 
 ## ✅ Query 9: Correcto
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.36 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
 
 ---
 
 ## ✅ Query 10: Correcto
 
-⏱ Tiempo: 0.39 ms
+⏱ Tiempo: 0.41 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -83,7 +83,7 @@
 
 ## ✅ Query 12: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.35 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -109,14 +109,14 @@
  Schowalter | Muller | Francesca
 ```
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.35 ms
 ✅ Se usó índice(s) en la consulta: id_profesor
 
 ---
 
 ## ✅ Query 14: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -135,14 +135,14 @@
  Química y Física
 ```
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.35 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor
 
 ---
 
 ## ✅ Query 16: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.30 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
@@ -191,7 +191,7 @@
 
 ## ✅ Query 20: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
@@ -208,8 +208,7 @@
 --- 
 +++ 
 @@ -1,6 +1,6 @@
--grau | tipo | total_creditos
-+grau | tipos | total_creditos
+ grau | tipo | total_creditos
 +Grado en Biotecnología (Plan 2015) | básica | 60.00
 +Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
  Grado en Ingeniería Informática (Plan 2015) | básica | 72.00
@@ -219,18 +218,24 @@
 -Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.34 ms
 ✅ Se usó índice(s) en la consulta: id_grado, PRIMARY
 
 ---
 
-## ❌ Query 23: Error
-- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'alumno_se_matricula_asignatura ama JOIN curso_escolar ce ON ama.id_curso_escolar' at line 2
+## ✅ Query 23: Correcto
 
+⏱ Tiempo: 0.37 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_curso_escolar
 
-## ❌ Query 24: Error
-- **Descripción**: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'persona p JOIN profesor p1 ON p.id = p1.id_profesorLEFT JOIN asignatura a ON p1.' at line 2
+---
 
+## ✅ Query 24: Correcto
+
+⏱ Tiempo: 0.37 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor
+
+---
 
 ## ❌ Query 25: Error
 - **Descripción**: 'NoneType' object is not iterable
