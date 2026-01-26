@@ -36,7 +36,7 @@ SELECT pe.apellido1, pe.apellido2, pe.nombre FROM persona AS pe LEFT JOIN profes
 SELECT d.nombre FROM departamento AS d LEFT JOIN profesor AS p ON p.id_departamento = d.id WHERE p.id_profesor IS NULL;
 
 -- 13. Retorna un llistat amb els professors/es que no imparteixen cap assignatura. (apellido1, apellido2, nombre)
-SELECT pe.apellido, pe.apellido2, pe.nombre FROM persona AS pe INNER JOIN profesor AS pr ON pr.id_profesor = pe.id LEFT JOIN asignatura AS a ON a.id_profesor = pr.id_profesor WHERE a.id_profesor IS NULL ORDER BY pe.apellido1, pe.apellido2, pe.nombre;
+SELECT pe.apellido1, pe.apellido2, pe.nombre FROM persona AS pe INNER JOIN profesor AS pr ON pr.id_profesor = pe.id LEFT JOIN asignatura AS a ON a.id_profesor = pr.id_profesor WHERE a.id_profesor IS NULL ORDER BY pe.apellido1, pe.apellido2, pe.nombre;
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
 SELECT a.id, a.nombre FROM asignatura AS a LEFT JOIN profesor AS p ON a.id_profesor = p.id_profesor WHERE p.id_profesor IS NULL ORDER BY a.nombre;
