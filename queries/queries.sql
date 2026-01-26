@@ -27,50 +27,51 @@ WHERE p.nif = '26902806M';
 SELECT DISTINCT d.nombre FROM departamento d
 JOIN profesores prof ON d.id = prof.id_departamento
 JOIN asignatura a ON prof.id_profesor = a.id_profesor
+JOIN grado g ON a.id_grado = g.id WHERE g.nombre = 'Grado en Ingeniería Informática (PLan 2015)';
 
 
 -- 9. Retorna un llistat amb tots els alumnes que s'han matriculat en alguna assignatura durant el curs escolar 2018/2019. (nombre, apellido1, apellido2)
-
+SELECT DISTINCT p.nombre AS nom, p.apellido1 AS primer_cognom, p.apellido2 AS segon_cognom FROM persona p JOIN alumno_se_matricula_asignatura ama ON p.id = ama.id_alumno JOIN curso_escolar ce ON ce.id = ama.id_curso_escolar WHERE ce.anyo_inicio = 2018 AND ce.anyo_fin = 2019;
 
 -- Resol les 6 següents consultes utilitzant les clàusules LEFT JOIN i RIGHT JOIN.
 -- 10. Retorna un llistat amb els noms de tots els professors/es i els departaments que tenen vinculats. El llistat també ha de mostrar aquells professors/es que no tenen cap departament associat. El llistat ha de retornar quatre columnes, nom del departament, primer cognom, segon cognom i nom del professor/a. El resultat estarà ordenat alfabèticament de menor a major pel nom del departament, cognoms i el nom. (departamento, apellido1, apellido2, nombre)
-
+SELECT d.nombre AS nombre_departamento, p.apellido1 AS primer_cognom, p.apellido2 AS segon_cognom, p.nombre AS nombre_profesor FROM persona p LEFT JOIN profesor prof ON prof.id_profesor = p.id LEFT JOIN departamento d ON d.id = prof.id_departamento WHERE p.tipo = 'professor' ORDER BY (d.nombre IS NULL) ASC, d.nombre ASC, p.apellido1 ASC, p.apellido2 ASC, p.nombre ASC;
 
 -- 11. Retorna un llistat amb els professors/es que no estan associats a un departament. (apellido1, apellido2, nombre)
-
+SELECT p.apellido1 AS primer_cognom, p.apellido2 AS segon_cognom, p.nombre AS nom_professor FROM persona p LEFT JOIN profesor prof ON prof.id_profesor = p.id WHERE p.tipo = 'profesor' AND prof.id_profesor IS NULL ORDER BY p.apellido1, p.apellido2, p.nombre; 
 
 -- 12. Retorna un llistat amb els departaments que no tenen professors/es associats. (nombre)
-
+SELECT d.nombre AS nombre_departament FROM departamento d LEFT JOIN profesor prof ON prof.id_departamento = d.id WHERE p.id_profesor IS NULL ORDER BY d.nombre;
 
 -- 13. Retorna un llistat amb els professors/es que no imparteixen cap assignatura. (apellido1, apellido2, nombre)
-
+SELECT p.apellido AS primer_cognom, p.apellido2 AS segon_cognom, p.nombre AS nom_professor FROM persona p INNER JOIN profesor prof ON prof.id_profesor = p.id LEFT JOIN asignatura a ON a.id_profesor = prof.id_profesor WHERE a.id_profesor IS NULL ORDER BY p.apellido1, p.apellido2, p.nombre;
 
 -- 14. Retorna un llistat amb les assignatures que no tenen un professor/a assignat. (id, nombre)
-
+SELECT a.nombre AS nom_asignatura FROM asignatura a LEFTO JOIN profesor p ON a.id_profesor = p.id_profesor WHERE p.id_profesor IS NULL ORDER BY a.nombre;
 
 -- 15. Retorna un llistat amb tots els departaments que no han impartit assignatures en cap curs escolar. (nombre)
-
+SELECT d.nombre AS nom_departament FROM asignatura a RIGHT JOIN profesor p ON a.id_profesor = p.id_profesor RIGHT JOIN departamento d ON p.id_departamento = d.id WHERE a.id IS NULL ORDER BY d.nombre;
 
 -- 16. Retorna el nombre total d'alumnes que hi ha. (total)
-
+SELECT COUNT(id) FROM persona WHERE tipo = 'alumno';
 
 -- 17. Calcula quants alumnes van néixer en 1999. (total)
-
+SELECT COUNT(id) FROM persona WHERE tipo = 'alumno' AND YEAR(fecha_nacimiento) = 1999;
 
 -- 18. Calcula quants professors/es hi ha en cada departament. El resultat només ha de mostrar dues columnes, una amb el nom del departament i una altra amb el nombre de professors/es que hi ha en aquest departament. El resultat només ha d'incloure els departaments que tenen professors/es associats i haurà d'estar ordenat de major a menor pel nombre de professors/es. (departamento, total)
-
+SELECT d.nombre AS nom_departament, COUNT(prof.id_profesor) AS num_profesor FROM departamento d INNER JOIN profesor prof ON prof.id_departamento = d.id GROUP BY d.nombre ORDER BY DESC num_professor;
 
 -- 19. Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. Tingui en compte que poden existir departaments que no tenen professors/es associats. Aquests departaments també han d'aparèixer en el llistat. (departamento, total)
-
+SELECT d.nombre AS nom_departament, COUNT(prof.id_profesor) AS num_profesor FROM departamento d LEFT JOIN profesor prof ON prof.id_departamento = d.id GROUP BY d.nombre ORDER BY d.nombre;
 
 -- 20. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun. Tingues en compte que poden existir graus que no tenen assignatures associades. Aquests graus també han d'aparèixer en el llistat. El resultat haurà d'estar ordenat de major a menor pel nombre d'assignatures. (grau, total)
-
+SELECT g.nombre AS nom_grau, COUNT(a.id) AS num_assignatura FROM grado g LEFT JOIN asignatura a ON a.id_grado = g.id GROUP BY g.nombre ORDER BY DESC num_assignatura;
 
 -- 21. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun, dels graus que tinguin més de 40 assignatures associades. (grau, total)
-
+SELECT g.nombre AS nom_grau, COUNT(a.id) AS num_asignatura FROM grado g LEFT JOIN asignatura a ON a.id_grado = g.id GROUP BY g.nombre HAVING COUNT(a.id) > 40 ORDER BY DESC num_assignatura;
 
 -- 22. Retorna un llistat que mostri el nom dels graus i la suma del nombre total de crèdits que hi ha per a cada tipus d'assignatura. El resultat ha de tenir tres columnes: nom del grau, tipus d'assignatura i la suma dels crèdits de totes les assignatures que hi ha d'aquest tipus. (grau, tipus, total_creditos)
-
+SELECT g.nombre AS nom_grau, a.tipo AS tipus_assignatura, SUM(a.creditos) AS credits_totals FROM grado g INNER JOIN asignatura a ON a.id_grado = g.id GROUP BY g.nombre, a.tipo ORDER BY g.nombre, a.tipo;
 
 -- 23. Retorna un llistat que mostri quants alumnes s'han matriculat d'alguna assignatura en cadascun dels cursos escolars. El resultat haurà de mostrar dues columnes, una columna amb l'any d'inici del curs escolar i una altra amb el nombre d'alumnes matriculats. (anyo_inicio, total)
 
