@@ -2,46 +2,46 @@
 
 
 ## 📈 Resumen
-✅ 13 correctas de 23 queries
+✅ 14 correctas de 23 queries
 
 ## ✅ Query 1: Correcto
 
-⏱ Tiempo: 0.36 ms
+⏱ Tiempo: 0.43 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 2: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 3: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.33 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 4: Correcto
 
-⏱ Tiempo: 0.32 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
 ## ✅ Query 5: Correcto
 
-⏱ Tiempo: 0.33 ms
+⏱ Tiempo: 0.40 ms
 ✅ Se usó índice(s) en la consulta: id_grado
 
 ---
 
 ## ✅ Query 6: Correcto
 
-⏱ Tiempo: 0.38 ms
+⏱ Tiempo: 0.39 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_departamento
 
 ---
@@ -49,21 +49,21 @@
 ## ✅ Query 7: Correcto
 
 ⏱ Tiempo: 0.53 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_asignatura,id_curso_escolar, PRIMARY, PRIMARY,nif
+✅ Se usó índice(s) en la consulta: PRIMARY,nif, PRIMARY, PRIMARY,id_asignatura,id_curso_escolar
 
 ---
 
 ## ✅ Query 8: Correcto
 
-⏱ Tiempo: 0.41 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_departamento, PRIMARY, id_profesor,id_grado
+⏱ Tiempo: 0.42 ms
+✅ Se usó índice(s) en la consulta: PRIMARY, id_profesor,id_grado, PRIMARY,id_departamento
 
 ---
 
 ## ✅ Query 9: Correcto
 
 ⏱ Tiempo: 0.36 ms
-✅ Se usó índice(s) en la consulta: PRIMARY,id_curso_escolar, PRIMARY
+✅ Se usó índice(s) en la consulta: PRIMARY, PRIMARY,id_curso_escolar
 
 ---
 
@@ -76,14 +76,14 @@
 
 ## ✅ Query 11: Correcto
 
-⏱ Tiempo: 0.34 ms
+⏱ Tiempo: 0.36 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
 
 ## ✅ Query 12: Correcto
 
-⏱ Tiempo: 0.31 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
@@ -214,7 +214,7 @@
 -83.00 | Técnicas instrumentales avanzadas
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.32 ms
 ✅ Se usó índice(s) en la consulta: PRIMARY
 
 ---
@@ -246,57 +246,35 @@
 +Química y Física
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_profesor, id_departamento
 
 ---
 
 ## ✅ Query 16: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
-## ❌ Query 17: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,2 +1,2 @@
--total
-+COUNT(id)
- 2.00
-```
+## ✅ Query 17: Correcto
 
-⏱ Tiempo: 0.30 ms
+⏱ Tiempo: 0.31 ms
 🔍 No se usó ningún índice en esta consulta.
 
 ---
 
-## ❌ Query 18: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,4 +1,4 @@
--departamento | total
-+nom_departament | num_professors
- Educación | 3.00
- Informática | 2.00
- Matemáticas | 2.00
-```
+## ❌ Query 18: Error
+- **Descripción**: 1054 (42S22): Unknown column 'num_professors' in 'order clause'
 
-⏱ Tiempo: 0.33 ms
-✅ Se usó índice(s) en la consulta: PRIMARY, id_departamento
-
----
 
 ## ❌ Query 19: Incorrecto
 ```diff
 --- 
 +++ 
 @@ -1,10 +1,10 @@
--departamento | total
-+nom_departament | num_professors
+ departamento | total
 +Agronomía | 1.00
 +Biología y Geología | 0.00
 +Derecho | 0.00
@@ -314,42 +292,18 @@
 -Biología y Geología | 0.00
 ```
 
-⏱ Tiempo: 0.35 ms
+⏱ Tiempo: 0.33 ms
 ✅ Se usó índice(s) en la consulta: id_departamento
 
 ---
 
-## ❌ Query 20: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,4 +1,4 @@
--grau | total
-+nom_grau | num_assignatures
- Grado en Ingeniería Informática (Plan 2015) | 51.00
- Grado en Biotecnología (Plan 2015) | 32.00
- Grado en Ingeniería Agrícola (Plan 2015) | 0.00
-```
+## ❌ Query 20: Error
+- **Descripción**: 1054 (42S22): Unknown column 'num_assignatures' in 'order clause'
 
-⏱ Tiempo: 0.37 ms
-✅ Se usó índice(s) en la consulta: id_grado
 
----
+## ❌ Query 21: Error
+- **Descripción**: 1054 (42S22): Unknown column 'num_assignatures' in 'order clause'
 
-## ❌ Query 21: Incorrecto
-```diff
---- 
-+++ 
-@@ -1,2 +1,2 @@
--grau | total
-+nom_grau | num_assignatures
- Grado en Ingeniería Informática (Plan 2015) | 51.00
-```
-
-⏱ Tiempo: 0.34 ms
-✅ Se usó índice(s) en la consulta: id_grado
-
----
 
 ## ❌ Query 22: Incorrecto
 ```diff
@@ -357,7 +311,7 @@
 +++ 
 @@ -1,6 +1,6 @@
 -grau | tipo | total_creditos
-+nom_grau | tipus_assignatura | total_credits
++grau | tipus | total_creditos
 +Grado en Biotecnología (Plan 2015) | básica | 60.00
 +Grado en Biotecnología (Plan 2015) | obligatoria | 120.00
  Grado en Ingeniería Informática (Plan 2015) | básica | 72.00
@@ -368,7 +322,7 @@
 ```
 
 ⏱ Tiempo: 0.33 ms
-✅ Se usó índice(s) en la consulta: id_grado, PRIMARY
+✅ Se usó índice(s) en la consulta: PRIMARY, id_grado
 
 ---
 
