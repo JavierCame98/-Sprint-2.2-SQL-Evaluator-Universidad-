@@ -53,7 +53,7 @@ SELECT COUNT(id) AS total FROM persona WHERE tipo = 'alumno' AND YEAR(fecha_naci
 SELECT d.nombre AS departamento, COUNT(p.id_profesor) AS total FROM departamento AS d INNER JOIN profesor AS p ON p.id_departamento = d.id GROUP BY d.nombre ORDER BY total DESC;
 
 -- 19. Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. Tingui en compte que poden existir departaments que no tenen professors/es associats. Aquests departaments també han d'aparèixer en el llistat. (departamento, total)
-SELECT d.nombre AS departamento, COUNT(p.id_profesor) AS total FROM departamento AS d LEFT JOIN profesor AS p ON p.id_departamento = d.id GROUP BY d.nombre ORDER BY d.nombre;
+SELECT d.nombre AS departamento, COUNT(p.id_profesor) AS total FROM departamento AS d LEFT JOIN profesor AS p ON p.id_departamento = d.id GROUP BY d.nombre;
 
 -- 20. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun. Tingues en compte que poden existir graus que no tenen assignatures associades. Aquests graus també han d'aparèixer en el llistat. El resultat haurà d'estar ordenat de major a menor pel nombre d'assignatures. (grau, total)
 SELECT g.nombre AS grau, COUNT(a.id) AS total FROM grado AS g LEFT JOIN asignatura AS a ON a.id_grado = g.id GROUP BY g.nombre ORDER BY total DESC;
