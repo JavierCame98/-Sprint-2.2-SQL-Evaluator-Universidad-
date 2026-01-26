@@ -48,22 +48,22 @@ SELECT d.nombre FROM asignatura AS a RIGHT JOIN profesor AS p ON a.id_profesor =
 SELECT COUNT(id) AS total FROM persona WHERE tipo = 'alumno';
 
 -- 17. Calcula quants alumnes van néixer en 1999. (total)
-SELECT COUNT(id) FROM persona WHERE tipo = 'alumno' AND YEAR(fecha_nacimiento) = 1999;
+SELECT COUNT(id) AS total FROM persona WHERE tipo = 'alumno' AND YEAR(fecha_nacimiento) = 1999;
 
 -- 18. Calcula quants professors/es hi ha en cada departament. El resultat només ha de mostrar dues columnes, una amb el nom del departament i una altra amb el nombre de professors/es que hi ha en aquest departament. El resultat només ha d'incloure els departaments que tenen professors/es associats i haurà d'estar ordenat de major a menor pel nombre de professors/es. (departamento, total)
-SELECT d.nombre AS nom_departament, COUNT(p.id_profesor) AS num_professors FROM departamento AS d INNER JOIN profesor AS p ON p.id_departamento = d.id GROUP BY d.nombre ORDER BY num_professors DESC;
+SELECT d.nombre AS departamento, COUNT(p.id_profesor) AS total FROM departamento AS d INNER JOIN profesor AS p ON p.id_departamento = d.id GROUP BY d.nombre ORDER BY num_professors DESC;
 
 -- 19. Retorna un llistat amb tots els departaments i el nombre de professors/es que hi ha en cadascun d'ells. Tingui en compte que poden existir departaments que no tenen professors/es associats. Aquests departaments també han d'aparèixer en el llistat. (departamento, total)
-SELECT d.nombre AS nom_departament, COUNT(p.id_profesor) AS num_professors FROM departamento AS d LEFT JOIN profesor AS p ON p.id_departamento = d.id GROUP BY d.nombre ORDER BY d.nombre;
+SELECT d.nombre AS departamento, COUNT(p.id_profesor) AS total FROM departamento AS d LEFT JOIN profesor AS p ON p.id_departamento = d.id GROUP BY d.nombre ORDER BY d.nombre;
 
 -- 20. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun. Tingues en compte que poden existir graus que no tenen assignatures associades. Aquests graus també han d'aparèixer en el llistat. El resultat haurà d'estar ordenat de major a menor pel nombre d'assignatures. (grau, total)
-SELECT g.nombre AS nom_grau, COUNT(a.id) AS num_assignatures FROM grado AS g LEFT JOIN asignatura AS a ON a.id_grado = g.id GROUP BY g.nombre ORDER BY num_assignatures DESC;
+SELECT g.nombre AS grau, COUNT(a.id) AS total FROM grado AS g LEFT JOIN asignatura AS a ON a.id_grado = g.id GROUP BY g.nombre ORDER BY num_assignatures DESC;
 
 -- 21. Retorna un llistat amb el nom de tots els graus existents en la base de dades i el nombre d'assignatures que té cadascun, dels graus que tinguin més de 40 assignatures associades. (grau, total)
-SELECT g.nombre AS nom_grau, COUNT(a.id) AS num_assignatures FROM grado AS g LEFT JOIN asignatura AS a ON a.id_grado = g.id GROUP BY g.nombre HAVING COUNT(a.id) > 40 ORDER BY num_assignatures DESC;
+SELECT g.nombre AS grau, COUNT(a.id) AS total FROM grado AS g LEFT JOIN asignatura AS a ON a.id_grado = g.id GROUP BY g.nombre HAVING COUNT(a.id) > 40 ORDER BY num_assignatures DESC;
 
 -- 22. Retorna un llistat que mostri el nom dels graus i la suma del nombre total de crèdits que hi ha per a cada tipus d'assignatura. El resultat ha de tenir tres columnes: nom del grau, tipus d'assignatura i la suma dels crèdits de totes les assignatures que hi ha d'aquest tipus. (grau, tipus, total_creditos)
-SELECT g.nombre AS nom_grau, a.tipo AS tipus_assignatura, SUM(a.creditos) AS total_credits FROM grado AS g INNER JOIN asignatura AS a ON a.id_grado = g.id GROUP BY g.nombre, a.tipo ORDER BY g.nombre, a.tipo;
+SELECT g.nombre AS grau, a.tipo AS tipus, SUM(a.creditos) AS total_creditos FROM grado AS g INNER JOIN asignatura AS a ON a.id_grado = g.id GROUP BY g.nombre, a.tipo ORDER BY g.nombre, a.tipo;
 
 -- 23. Retorna un llistat que mostri quants alumnes s'han matriculat d'alguna assignatura en cadascun dels cursos escolars. El resultat haurà de mostrar dues columnes, una columna amb l'any d'inici del curs escolar i una altra amb el nombre d'alumnes matriculats. (anyo_inicio, total)
 
