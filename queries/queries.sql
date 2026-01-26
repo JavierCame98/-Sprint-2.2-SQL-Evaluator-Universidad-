@@ -27,10 +27,10 @@ SELECT DISTINCT p.nombre, p.apellido1, p.apellido2 FROM persona p JOIN alumno_se
 
 -- Resol les 6 següents consultes utilitzant les clàusules LEFT JOIN i RIGHT JOIN.
 -- 10. Retorna un llistat amb els noms de tots els professors/es i els departaments que tenen vinculats. El llistat també ha de mostrar aquells professors/es que no tenen cap departament associat. El llistat ha de retornar quatre columnes, nom del departament, primer cognom, segon cognom i nom del professor/a. El resultat estarà ordenat alfabèticament de menor a major pel nom del departament, cognoms i el nom. (departamento, apellido1, apellido2, nombre)
-SELECT d.nombre AS departamento, pe.apellido1, pe.apellido2, pe.nombre AS nombre FROM persona AS pe LEFT JOIN profesor AS pr ON pr.id_profesor = pe.id LEFT JOIN departamento AS d ON d.id = pr.id_departamento WHERE pe.tipo = 'profesor' ORDER BY (d.nombre IS NULL) ASC, d.nombre ASC, pe.apellido1 ASC, pe.apellido2 ASC, pe.nombre ASC;
+SELECT d.nombre AS departamento, pe.apellido1, pe.apellido2, pe.nombre FROM persona AS pe LEFT JOIN profesor AS pr ON pr.id_profesor = pe.id LEFT JOIN departamento AS d ON d.id = pr.id_departamento WHERE pe.tipo = 'profesor' ORDER BY (d.nombre IS NULL) ASC, d.nombre ASC, pe.apellido1 ASC, pe.apellido2 ASC, pe.nombre ASC;
 
 -- 11. Retorna un llistat amb els professors/es que no estan associats a un departament. (apellido1, apellido2, nombre)
-SELECT pe.apellido1 AS primer_cognom, pe.apellido2 AS segon_cognom, pe.nombre AS nom_professor FROM persona AS pe LEFT JOIN profesor AS pr ON pr.id_profesor = pe.id WHERE pe.tipo = 'profesor' AND pr.id_profesor IS NULL ORDER BY pe.apellido1, pe.apellido2, pe.nombre;
+SELECT pe.apellido1, pe.apellido2, pe.nombre FROM persona AS pe LEFT JOIN profesor AS pr ON pr.id_profesor = pe.id WHERE pe.tipo = 'profesor' AND pr.id_profesor IS NULL ORDER BY pe.apellido1, pe.apellido2, pe.nombre;
 
 -- 12. Retorna un llistat amb els departaments que no tenen professors/es associats. (nombre)
 SELECT d.nombre AS nom_departament FROM departamento AS d LEFT JOIN profesor AS p ON p.id_departamento = d.id WHERE p.id_profesor IS NULL ORDER BY d.nombre;
